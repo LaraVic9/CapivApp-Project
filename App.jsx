@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 import Login from './src/screens/outside/Login';
 import Welcome from './src/screens/outside/Welcome';
 import SignUp from './src/screens/outside/SignUp';
-import Profile from './src/screens/Inside/Profile';
+
 
 const Stack = createNativeStackNavigator()
 
@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator()
 export default function App() {
 
 
-  const user = false 
+  const user = true 
 
   if(user){
     return (
