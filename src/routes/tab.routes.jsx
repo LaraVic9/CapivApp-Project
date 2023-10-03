@@ -7,7 +7,7 @@ import {
     MaterialCommunityIcons,
     MaterialIcons,
   } from "@expo/vector-icons";
-import { Home, New, Profile, Settings, Historico } from '../screens/Inside';
+import { Home, New, Profile, Settings, Historico, Cliente } from '../screens/Inside';
 import COLORS from '../constants/color'
 
 const Tab = createBottomTabNavigator()
@@ -47,13 +47,13 @@ export default function TabRoutes(){
                 }}
             />
             <Tab.Screen 
-                name='settings'
-                component={Settings}
+                name='cliente'
+                component={Cliente}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                          <SimpleLineIcons
-                            name="settings"
+                            <MaterialIcons
+                            name="person-outline"
                             size={24}
                             color={focused ? COLORS.primary : COLORS.black}
                           />

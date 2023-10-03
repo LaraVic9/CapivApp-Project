@@ -25,6 +25,15 @@ export default function DrawerRoutes(){
                     drawerLabel: 'Meu Perfil'
                 }}
             />
+              <Drawer.Screen
+                name='Config'
+                component={StackRoutes}
+                options={{
+                    drawerIcon:  ({ color, size }) => <Feather name='settings' color={color} size={size}/>,
+                    drawerLabel: 'Setings'
+                }}
+            />
+            
         </Drawer.Navigator>
     )
 }

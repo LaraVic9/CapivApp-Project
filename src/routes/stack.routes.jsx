@@ -1,7 +1,7 @@
 import  { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 
-import Profile from '../screens/Inside/Profile'
+import { Profile, Config } from '../screens/Inside'
 
 const Stack = createNativeStackNavigator()
 
@@ -14,6 +14,10 @@ export default function StackRoutes(){
             <Stack.Screen
                 name='home'
                 component={Profile}
+            />
+            <Stack.Screen
+                name='settings'
+                component={Config}
             />
         </Stack.Navigator>
     )
