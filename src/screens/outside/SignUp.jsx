@@ -3,7 +3,30 @@ import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react
 import { AntDesign } from '@expo/vector-icons';
 import Button from '../../components/Button';
 
+import { useNavigation } from '@react-navigation/native';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import useAuth from '../../hooks/useAuth';
+import { auth } from '../../config/firebase';
+import { useState } from 'react';
+
 export default function SignUp({ navigation }) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const nav = useNavigation();
+   
+  const handleSubmit = async () => {
+    if (email && password) {
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+      } catch (err) {
+        console.log('got error: ', err.message);
+      }
+    }else {
+      console.log('ops');
+    }
+  }
+
   return (
     <View style={styles.container}>
       <ImageBackground source={require('./../../../assets/background.png')} style={styles.background}>
@@ -11,16 +34,34 @@ export default function SignUp({ navigation }) {
 
       <Text style={styles.title}>Criar conta</Text>
       <View style={styles.inputContainer}>
-      <TextInput style={styles.input} textContentType='name' placeholder='Nome'  placeholderTextColor='#FFF'/>
-      <TextInput style={styles.input} textContentType='emailAddress' placeholder='Email'  placeholderTextColor='#FFF'/>
-      <TextInput style={styles.input}  placeholder='CPF'  placeholderTextColor='#FFF'/>
-      <TextInput style={styles.input}  placeholder='CNPJ'  placeholderTextColor='#FFF'/>
-      <TextInput style={styles.input} textContentType='password' placeholder='Senha'  placeholderTextColor='#FFF' secureTextEntry/>
-      <TextInput style={styles.input} textContentType='password' placeholder='Confirmas Senha'  placeholderTextColor='#FFF' secureTextEntry/>
+      <TextInput 
+          style={styles.input} 
+          textContentType='emailAddress' 
+          placeholder='Email'  
+          placeholderTextColor='#FFF'
+          value={email}
+          onChangeText={value => setEmail(value)} 
+      />
+       <TextInput 
+          style={styles.input} 
+          textContentType='password' 
+          placeholder='Senha'  
+          placeholderTextColor='#FFF' 
+          secureTextEntry={true}
+          value={password} 
+          onChangeText={value => setPassword(value)}y
+       />
+      <TextInput 
+          style={styles.input}
+          textContentType='password'
+          placeholder='Confirmas Senha'  
+          placeholderTextColor='#FFF' 
+          secureTextEntry
+        />
       </View>
       <Button
         title='Registrar-se'
-       
+        onPress={handleSubmit}
         style={styles.button}
       />
       </ImageBackground>

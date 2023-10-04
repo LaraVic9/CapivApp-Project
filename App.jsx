@@ -5,21 +5,19 @@ import { View, Text, StatusBar, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import React, {useState} from 'react';
 
-
 import Login from './src/screens/outside/Login';
 import Welcome from './src/screens/outside/Welcome';
 import SignUp from './src/screens/outside/SignUp';
 
+import { auth } from './src/config/firebase';
+import useAuth from './src/hooks/useAuth';
 
 const Stack = createNativeStackNavigator()
 
-
-
-
 export default function App() {
 
-
-  const user = true 
+  const {user} = useAuth();
+  //const user = true 
 
   if(user){
     return (

@@ -1,1 +1,1 @@
-<FontAwesomeIcon icon="fa-solid fa-arrow-left" />
+background: linear-gradient(180deg, #001D2A 5.79%, #013144 42.19%, #001D2A 92.71%);

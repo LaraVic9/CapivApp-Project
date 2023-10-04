@@ -1,11 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions } from 'react-native';
 import Button from '../../components/Button';
 import { AntDesign } from '@expo/vector-icons';
+import { useState } from 'react';
+
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import useAuth from '../../hooks/useAuth';
+import { auth } from '../../config/firebase';
+import { useNavigation } from '@react-navigation/native';
+
+const { width, height } = Dimensions.get('window')
 
 export default function Login({ navigation }) {
 
- 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const nav = useNavigation();
+   
+  const handleSubmit = async () => {
+    if (email && password) {
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch (err) {
+        console.log('got error: ', err.message);
+      }
+    }else {
+      console.log('ops');
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -18,13 +40,26 @@ export default function Login({ navigation }) {
       <Text style={styles.title}>CapivApp</Text>
       <Text style={styles.subTitle}>Login</Text>
       <View style={styles.inputContainer}>
-      <TextInput style={styles.input} placeholder='Email'  placeholderTextColor='#FFF'/>
-      <TextInput style={styles.input} placeholder='Senha'  placeholderTextColor='#FFF' secureTextEntry/>
+      <TextInput 
+          style={styles.input} 
+          placeholder='Email'  
+          placeholderTextColor='#FFF'
+          value={email}
+          onChangeText={value => setEmail(value)} 
+        />
+      <TextInput 
+          style={styles.input}
+          placeholder='Senha'  
+          placeholderTextColor='#FFF' 
+          secureTextEntry
+          value={password} 
+          onChangeText={value => setPassword(value)}
+      />
       <Text style={styles.esqueceuSenha}>Esqueceu a senha?</Text>
       </View>
       <Button
         title='Entrar'
-       
+        onPress={handleSubmit}
         style={styles.button}
       />
       

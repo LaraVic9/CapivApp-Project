@@ -3,12 +3,21 @@ import { Feather } from '@expo/vector-icons'
 
 import TabRoutes from './tab.routes'
 import StackRoutes from './stack.routes'
+import { PrioritariaOs, Config, EsperaOs } from '../screens/Inside'
 
 const Drawer = createDrawerNavigator()
 
 export default function DrawerRoutes(){
     return (
-        <Drawer.Navigator screenOptions={{ title: '' }}>
+        <Drawer.Navigator 
+        screenOptions={{ 
+            title: '', 
+            drawerStyle:{
+                width: 250
+            }, headerStyle: {
+                backgroundColor: '#001D2A'
+            }, headerTintColor: '#FFF' 
+            }}>
             <Drawer.Screen
                 name='home'
                 component={TabRoutes}
@@ -26,12 +35,22 @@ export default function DrawerRoutes(){
                 }}
             />
               <Drawer.Screen
-                name='Config'
-                component={StackRoutes}
+                name='config'
+                component={Config}
                 options={{
                     drawerIcon:  ({ color, size }) => <Feather name='settings' color={color} size={size}/>,
-                    drawerLabel: 'Setings'
+                    drawerLabel: 'Configuração'
                 }}
+                
+            />
+             <Drawer.Screen
+                name='prioritariasOs'
+                component={PrioritariaOs}
+                options={{
+                    drawerIcon:  ({ color, size }) => <Feather name='settings' color={color} size={size}/>,
+                    drawerLabel: 'Os Prioritárias'
+                }}
+                
             />
             
         </Drawer.Navigator>

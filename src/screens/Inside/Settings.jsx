@@ -9,17 +9,8 @@ export default function Config() {
         flex: 1,
         backgroundColor: COLORS.white,}}>
     <View style={styles.container}>
-      <TouchableOpacity  onPress={() => navigation.goBack()}
-          style={{
-            position: "absolute",
-            left: 0,
-          }}>
-             <MaterialIcons
-            name="keyboard-arrow-left"
-            size={24}
-            color={COLORS.black}
-          />
-      </TouchableOpacity>   
+      
+      <Text style={styles.title}>Configurações</Text>
     </View>
     </SafeAreaView>
   );

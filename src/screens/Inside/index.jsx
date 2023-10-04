@@ -4,6 +4,8 @@ import Profile from "./Profile";
 import Config from './Settings'
 import Historico from "./Historico0s";
 import Cliente from "./Cliente";
+import EsperaOs from "./EsperaOs";
+import PrioritariaOs from "./PrioritariasOs";
 
 export {
     Home,
@@ -11,5 +13,7 @@ export {
     Profile,
     Config,
     Historico,
-    Cliente
+    Cliente,
+    EsperaOs,
+    PrioritariaOs
 }
