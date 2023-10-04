@@ -1,38 +1,50 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TextInput, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import Button from '../../components/Button';
 
 import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import useAuth from '../../hooks/useAuth';
-import { auth } from '../../config/firebase';
 import { useState } from 'react';
+import { auth } from '../../config/firebase';
+
 
 export default function SignUp({ navigation }) {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const nav = useNavigation();
    
-  const handleSubmit = async () => {
-    if (email && password) {
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-      } catch (err) {
-        console.log('got error: ', err.message);
-      }
-    }else {
-      console.log('ops');
-    }
-  }
+   
+
+ const handleSubmit = async () => {
+   if (email && password) {
+     try {
+       await createUserWithEmailAndPassword(auth, email, password);
+     } catch (err) {
+       console.log('got error: ', err.message);
+     }
+   }else {
+     console.log('ops');
+   }
+ }
 
   return (
     <View style={styles.container}>
       <ImageBackground source={require('./../../../assets/background.png')} style={styles.background}>
-      <AntDesign style={styles.icon} name="leftcircle" size={30} color="white" onPress={() => navigation.navigate("Welcome")}/>
+      <AntDesign 
+          style={styles.icon}
+          name="leftcircle" 
+          size={30} 
+          color="white"
+          onPress={() => navigation.navigate("Welcome")}
+       />
+      <Image 
+          source={require('../../../assets/capibara.png')} 
+          style={styles.Image}
+      />   
+      <Text style={styles.title}>CapivApp</Text>
 
-      <Text style={styles.title}>Criar conta</Text>
+      <Text style={styles.subTitle}>Criar conta</Text>
       <View style={styles.inputContainer}>
       <TextInput 
           style={styles.input} 
@@ -49,7 +61,7 @@ export default function SignUp({ navigation }) {
           placeholderTextColor='#FFF' 
           secureTextEntry={true}
           value={password} 
-          onChangeText={value => setPassword(value)}y
+          onChangeText={value => setPassword(value)}
        />
       <TextInput 
           style={styles.input}
@@ -60,10 +72,14 @@ export default function SignUp({ navigation }) {
         />
       </View>
       <Button
-        title='Registrar-se'
-        onPress={handleSubmit}
+        title='Registrar-se'      
         style={styles.button}
+        onPress={handleSubmit}
       />
+        <TouchableOpacity style={styles.textContent} onPress={() => navigation.navigate("Login")}> 
+          <Text style={styles.text}>Ja tem uma conta?</Text>
+          <Text style={styles.entrar}>Entrar</Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -80,10 +96,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 3,
     borderRadius: 4,
     alignSelf: 'flex-start',
-
-    marginTop: 50,
+    marginBottom: -20,
     marginHorizontal: '5%',
-    
+    marginVertical: '7%'
   },
   Image: {
     width: 250,
@@ -93,7 +108,8 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     color: 'white',
-    marginBottom: 40,
+    marginBottom: 20,
+    marginTop: -90
   
   },
   subTitle: {
@@ -117,12 +133,6 @@ const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 20,
   },
-  esqueceuSenha: {
-    color: 'white',
-    fontSize: 14,
-    marginTop: -15,
-    marginBottom: 20,
-  },
   button:{
     width: '80%',
     marginBottom: 14,
@@ -135,5 +145,25 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textContent: {
+    flexDirection: 'row',
+    marginTop: 10,
+    
+  },
+  text: {
+    color: 'white',
+    fontSize: 14,
+    marginTop: -15,
+    marginBottom: 20,
+    paddingEnd: 5,
+  },
+  entrar: {
+    color: 'white',
+    fontSize: 14,
+    marginTop: -15,
+    marginBottom: 20,
+    paddingEnd: 5,
+    fontWeight: 'bold',
   },
 });

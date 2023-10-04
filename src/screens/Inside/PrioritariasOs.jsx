@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function PrioritariaOs() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>PrioritariaOs</Text>
+      <Text style={styles.title}>Prioritaria Os</Text>
       
     </View>
   );

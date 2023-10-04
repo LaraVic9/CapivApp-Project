@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function EsperaOs() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>EsperaOs</Text>
+      <Text style={styles.title}>Espera Os</Text>
       
     </View>
   );

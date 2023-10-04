@@ -63,7 +63,7 @@ export default function Login({ navigation }) {
         style={styles.button}
       />
       
-      <Text style={styles.Signup}>Já possui uma conta?</Text>
+      <Text style={styles.Signup} onPress={() => navigation.navigate("SignUp")}>Já possui uma conta?</Text>
       </ImageBackground>
     </View>
   );
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: -15,
     marginBottom: 20,
+    paddingStart: 20,
   },
   button:{
     width: '80%',

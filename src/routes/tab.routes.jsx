@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Feather } from '@expo/vector-icons'
+import { AntDesign, Feather } from '@expo/vector-icons'
 import { View, Text, Platform } from "react-native";
 import {
     SimpleLineIcons,
@@ -52,8 +52,8 @@ export default function TabRoutes(){
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <MaterialIcons
-                            name="person-outline"
+                            <AntDesign
+                            name="team"
                             size={24}
                             color={focused ? COLORS.primary : COLORS.black}
                           />
@@ -71,7 +71,7 @@ export default function TabRoutes(){
                             style={{
                               alignItems: "center",
                               justifyContent: "center",
-                              backgroundColor: COLORS.primary,
+                              backgroundColor: '#0B385B',
                               height: Platform.OS == "ios" ? 50 : 60,
                               width: Platform.OS == "ios" ? 50 : 60,
                               top: Platform.OS == "ios" ? -10 : -20,
