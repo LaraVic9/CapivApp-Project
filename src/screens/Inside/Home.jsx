@@ -13,7 +13,16 @@ import { Searchbar } from 'react-native-paper';
 import React, {useState} from 'react'
 import Searchbarr from '../../components/SearchBar/SearchBar';
 
+import ListaHorizontal from '../../components/layout/ListaHorizontal/ListaHorizontal';
+
 export default function Home() {
+
+  const data = [
+    '#FF33FF',
+    '99ff99',
+    'B34D4D',
+    '#00B3E6'
+  ]
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -27,12 +36,16 @@ export default function Home() {
        />
          
          <Text style={styles.title}>Olá, {name}!</Text>
-         <Searchbar
-            placeholder="Pesquisar"
-            onChangeText={onChangeSearch}
-            value={searchQuery}
-        />
-        <Searchbarr/>
+         <View style={styles.searchContainer}>
+            <Searchbar
+              placeholder="Pesquisar"
+              onChangeText={onChangeSearch}
+              value={searchQuery} 
+              style={styles.searchBar}
+            />
+          </View>
+          <ListaHorizontal data={data}/>
+        
     </View>
      </LinearGradient>
   );
@@ -67,5 +80,13 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  searchBar: {
+    width: '90%'
+  },
+  searchContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
   },
 });
