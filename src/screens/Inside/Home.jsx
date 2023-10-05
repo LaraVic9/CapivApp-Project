@@ -14,7 +14,7 @@ import React, {useState} from 'react'
 
 
 import Prioridade from './Prioridade';
-
+import OsItem from '../components/OsItem';
 
 import ListaHorizontal from '../../components/layout/ListaHorizontal/ListaHorizontal';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -56,6 +56,7 @@ export default function Home({ navigation }) {
               style={styles.title}>
               Ordens de Serviço Novas
             </Text>
+            <OsItem/>
           <TouchableOpacity 
             style={styles.buttonText}
             onPress={() => navigation.navigate("prioridade")}
