@@ -12,7 +12,7 @@ import User from '../../assets/user.jpeg'
 
 import TabRoutes from './tab.routes'
 import StackRoutes from './stack.routes'
-import { PrioritariaOs, Config, EsperaOs, Historico, Cliente } from '../screens/Inside'
+import { Prioridade, Config, EsperaOs, Historico, Cliente, Profile } from '../screens/Inside'
 
 const Drawer = createDrawerNavigator()
 
@@ -78,7 +78,7 @@ export default function DrawerRoutes(){
             />
              <Drawer.Screen
                 name='profile'
-                component={StackRoutes}
+                component={Profile}
                 options={{
                     drawerIcon:  ({ color, size }) => <Feather name='user' color={color} size={size}/>,
                     drawerLabel: 'Meu Perfil'
@@ -94,8 +94,8 @@ export default function DrawerRoutes(){
                 
             />
              <Drawer.Screen
-                name='prioritariasOs'
-                component={PrioritariaOs}
+                name='prioridade'
+                component={Prioridade}
                 options={{
                     drawerIcon:  ({ color, size }) => <AntDesign name="exclamationcircleo" size={size} color={color} />,
                     drawerLabel: 'Os Prioritárias'

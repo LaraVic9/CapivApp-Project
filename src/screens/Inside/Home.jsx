@@ -11,19 +11,24 @@ import {
 } from '@expo/vector-icons'
 import { Searchbar } from 'react-native-paper';
 import React, {useState} from 'react'
-import Searchbarr from '../../components/SearchBar/SearchBar';
+
+
+import Prioridade from './Prioridade';
+
 
 import ListaHorizontal from '../../components/layout/ListaHorizontal/ListaHorizontal';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Home() {
+export default function Home({ navigation }) {
 
   const data = [
     '#FF33FF',
-    '99ff99',
-    'B34D4D',
+    '#3366E6',
+    '#B34D4D',
     '#00B3E6'
   ]
 
+  
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const onChangeSearch = query => setSearchQuery(query);
@@ -35,7 +40,7 @@ export default function Home() {
       <StatusBar  animated={true} style='light'
        />
          
-         <Text style={styles.title}>Olá, {name}!</Text>
+         <Text style={styles.subTitle}>Olá, {name}!</Text>
          <View style={styles.searchContainer}>
             <Searchbar
               placeholder="Pesquisar"
@@ -44,8 +49,27 @@ export default function Home() {
               style={styles.searchBar}
             />
           </View>
-          <ListaHorizontal data={data}/>
-        
+          <ListaHorizontal 
+              data={data}
+              />
+          <Text 
+              style={styles.title}>
+              Ordens de Serviço Novas
+            </Text>
+          <TouchableOpacity 
+            style={styles.buttonText}
+            onPress={() => navigation.navigate("prioridade")}
+            >
+              <Text style={styles.title} >
+              OS Prioridade Alta</Text>
+            
+            <AntDesign 
+              name="right" 
+              size={24} 
+              color="white" 
+              style={styles.icon} 
+            />
+          </TouchableOpacity>
     </View>
      </LinearGradient>
   );
@@ -53,10 +77,19 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 12,
+    
     justifyContent: "center",
+    width: '100%'
   },
   title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: 'white',
+    padding: 5,
+    paddingStart: 20,
+    paddingVertical: 20,
+  },
+  subTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
@@ -88,5 +121,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
+  },
+  buttonText: {
+    flexDirection: 'row'
+  },  
+  icon:{
+    padding: 5,
+    paddingVertical: 25,
+    paddingStart: 100,
   },
 });

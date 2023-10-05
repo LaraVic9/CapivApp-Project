@@ -8,8 +8,13 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../../config/firebase';
 
+import Checkbox from 'expo-checkbox';
+
 
 export default function SignUp({ navigation }) {
+
+  const [isChecked, setChecked] = useState(false);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const nav = useNavigation();
@@ -36,7 +41,7 @@ export default function SignUp({ navigation }) {
           name="leftcircle" 
           size={30} 
           color="white"
-          onPress={() => navigation.navigate("Welcome")}
+          onPress={() => navigation.navigate("welcome")}
        />
       <Image 
           source={require('../../../assets/capibara.png')} 
@@ -70,13 +75,17 @@ export default function SignUp({ navigation }) {
           placeholderTextColor='#FFF' 
           secureTextEntry
         />
+         <View style={styles.section}>
+                <Checkbox style={styles.checkbox} value={isChecked} onValueChange={setChecked}/>
+                <Text style={styles.paragraph}>Lembrar Senha</Text>
+            </View>
       </View>
       <Button
         title='Registrar-se'      
         style={styles.button}
         onPress={handleSubmit}
       />
-        <TouchableOpacity style={styles.textContent} onPress={() => navigation.navigate("Login")}> 
+        <TouchableOpacity style={styles.textContent} onPress={() => navigation.navigate("login")}> 
           <Text style={styles.text}>Ja tem uma conta?</Text>
           <Text style={styles.entrar}>Entrar</Text>
         </TouchableOpacity>
@@ -135,7 +144,8 @@ const styles = StyleSheet.create({
   },
   button:{
     width: '80%',
-    marginBottom: 14,
+    marginVertical: 10,
+
   },
   Signup: {
     color: 'white',
@@ -148,8 +158,7 @@ const styles = StyleSheet.create({
   },
   textContent: {
     flexDirection: 'row',
-    marginTop: 10,
-    
+    marginTop: 12,
   },
   text: {
     color: 'white',
@@ -157,6 +166,7 @@ const styles = StyleSheet.create({
     marginTop: -15,
     marginBottom: 20,
     paddingEnd: 5,
+    marginStart: -130,
   },
   entrar: {
     color: 'white',
@@ -166,4 +176,18 @@ const styles = StyleSheet.create({
     paddingEnd: 5,
     fontWeight: 'bold',
   },
+   section: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: -20,
+        marginStart: 15,
+      },
+      paragraph: {
+        fontSize: 13,
+        color: '#FFF'
+      },
+      checkbox: {
+        margin: 8,
+        color: '#FFF',
+      },
 });

@@ -5,7 +5,7 @@ import Config from './Settings'
 import Historico from "./HistoricoOs";
 import Cliente from "./Cliente";
 import EsperaOs from "./EsperaOs";
-import PrioritariaOs from "./PrioritariasOs";
+import Prioridade from "./Prioridade";
 
 export {
     Home,
@@ -15,5 +15,5 @@ export {
     Historico,
     Cliente,
     EsperaOs,
-    PrioritariaOs
+    Prioridade
 }

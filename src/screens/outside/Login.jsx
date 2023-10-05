@@ -55,7 +55,7 @@ export default function Login({ navigation }) {
           value={password} 
           onChangeText={value => setPassword(value)}
       />
-      <Text style={styles.esqueceuSenha}>Esqueceu a senha?</Text>
+      <Text style={styles.esqueceuSenha} onPress={() => navigation.navigate("alterar")}>Esqueceu a senha?</Text>
       </View>
       <Button
         title='Entrar'
@@ -63,7 +63,7 @@ export default function Login({ navigation }) {
         style={styles.button}
       />
       
-      <Text style={styles.Signup} onPress={() => navigation.navigate("SignUp")}>Já possui uma conta?</Text>
+      <Text style={styles.Signup} onPress={() => navigation.navigate("signUp")}>Já possui uma conta?</Text>
       </ImageBackground>
     </View>
   );

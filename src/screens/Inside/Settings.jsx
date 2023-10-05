@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 500,
   },
   textButton: {
     color: '#FFF',

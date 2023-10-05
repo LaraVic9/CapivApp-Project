@@ -1,7 +1,7 @@
 import  { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 
-import { Profile, Config, PrioritariaOs } from '../screens/Inside'
+import { Profile, Config, Prioridade, Cliente, EsperaOs, New, Settings, Historico } from '../screens/Inside'
 
 const Stack = createNativeStackNavigator()
 
@@ -20,8 +20,28 @@ export default function StackRoutes(){
                 component={Config}
             />
             <Stack.Screen
-                name='prioritariaOs'
-                component={PrioritariaOs}
+                name='prioridade'
+                component={Prioridade}
+            />
+            <Stack.Screen
+                name='espera'
+                component={EsperaOs}
+            />
+            <Stack.Screen
+                name='cliente'
+                component={Cliente}
+            />
+            <Stack.Screen
+                name='config'
+                component={Settings}
+            />
+            <Stack.Screen
+                name='new'
+                component={New}
+            />
+            <Stack.Screen
+                name='historico'
+                component={Historico}
             />
         </Stack.Navigator>
     )

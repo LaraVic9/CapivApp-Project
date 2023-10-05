@@ -18,12 +18,12 @@ export default function Welcome({ navigation }) {
       <Text style={styles.subTitle}>Entre ou Cadastre-se</Text>
       <Button
         title='Login'
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("login")}
         style={styles.button}
       />
       <Button
         title='Sign Up'
-        onPress={() => navigation.navigate("SignUp")}
+        onPress={() => navigation.navigate("signUp")}
         style={styles.button}
       />
        </ImageBackground>
