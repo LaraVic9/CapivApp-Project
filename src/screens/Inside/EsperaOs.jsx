@@ -7,6 +7,7 @@ import React, {useState} from 'react'
 import CarrosselOS from '../components/carrossel/CarrosselOS';
 import OSCarrossel from '../components/carrossel/OS';
 import { OsItemH } from '../components/OS';
+import { Filtro } from '../components/Filtro';
 
 export default function EsperaOs({ navigation }) {
 
@@ -28,6 +29,14 @@ export default function EsperaOs({ navigation }) {
               style={styles.searchBar}
             />
           </View>
+          <View>
+            <Text style={styles.subTitle}>Filtros:</Text>
+              <Filtro title='Prioridade'/>
+              <Filtro title='Tipo Serviço'/>
+              <Filtro title='Tipo Hardware'/>
+              <Filtro title='Cliente'/>
+              <Filtro title='Data'/>
+           </View>
           <Text style={styles.subTitle}>Prioritárias:</Text>
 
          <View style={styles.CarrosseContainer}>

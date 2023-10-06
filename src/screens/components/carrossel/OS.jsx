@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontWeight: "400",
         marginStart: 5,   
-        marginTop: -20,
+        marginTop: -5,
     },
     prioridadeColor: {
       backgroundColor: '#C61B11',

@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function Profile({ navigation }) {
+export default function ClientesList() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Meu perfil</Text>
-      <Button title="Home" onPress= {() => navigation.natigate('home')}/>
+      <Text style={styles.title}>Cliente</Text>
+      
     </View>
   );
 }

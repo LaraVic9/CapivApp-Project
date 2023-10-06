@@ -26,6 +26,7 @@ export default function Historico({ navigation }) {
             />
           </View>
            <View>
+           <Text style={styles.subTitle}>Filtros:</Text>
               <Filtro title='Prioridade'/>
               <Filtro title='Status'/>
               <Filtro title='Tipo Serviço'/>
