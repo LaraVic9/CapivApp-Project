@@ -26,7 +26,7 @@ const ListaHorizontal = ({data}) => {
                 justifyContent: 'center',
                 marginHorizontal: 10,
                 borderRadius: 12,
-                    
+                marginBottom: '10%',
                  }}>
                     <View style={styles.container}>
                         <Text 

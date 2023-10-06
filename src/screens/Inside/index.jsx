@@ -6,6 +6,7 @@ import Historico from "./HistoricoOs";
 import Cliente from "./Cliente";
 import EsperaOs from "./EsperaOs";
 import Prioridade from "./Prioridade";
+import OSIndividual from "./OSIndividual";
 
 export {
     Home,
@@ -15,5 +16,6 @@ export {
     Historico,
     Cliente,
     EsperaOs,
-    Prioridade
+    Prioridade,
+    OSIndividual
 }

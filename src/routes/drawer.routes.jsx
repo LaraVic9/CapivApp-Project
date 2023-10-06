@@ -12,7 +12,7 @@ import User from '../../assets/user.jpeg'
 
 import TabRoutes from './tab.routes'
 import StackRoutes from './stack.routes'
-import { Prioridade, Config, EsperaOs, Historico, Cliente, Profile } from '../screens/Inside'
+import { Prioridade, Config, EsperaOs, Historico, Cliente, Profile, OSIndividual } from '../screens/Inside'
 
 const Drawer = createDrawerNavigator()
 
@@ -25,7 +25,7 @@ export default function DrawerRoutes(){
                 width: 250,
                 borderTopRightRadius: 40,
                 backgroundColor: '#0B385B',
-               
+                marginTop: '8%'
             }, headerStyle: {
                 backgroundColor: '#08354a'
             }, headerTintColor: '#FFF' ,
@@ -98,7 +98,7 @@ export default function DrawerRoutes(){
                 component={Prioridade}
                 options={{
                     drawerIcon:  ({ color, size }) => <AntDesign name="exclamationcircleo" size={size} color={color} />,
-                    drawerLabel: 'Os Prioritárias'
+                    drawerLabel: 'OS Prioritárias'
                 }}
                 
             />
@@ -129,6 +129,15 @@ export default function DrawerRoutes(){
                 }}
                 
             />
+             <Drawer.Screen
+                name='os'
+                component={OSIndividual}
+                options={{
+                    drawerIcon:  ({ color, size }) => <AntDesign name="team" size={size} color={color} />,
+                    drawerLabel: 'OS'
+                }}
+                
+            />
           
         </Drawer.Navigator>
     )
@@ -137,7 +146,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-       
+        marginTop: '20%'
     },
     icon: {
         color: '#FFF',
