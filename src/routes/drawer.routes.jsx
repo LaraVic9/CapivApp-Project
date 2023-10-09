@@ -12,7 +12,7 @@ import User from '../../assets/user.jpeg'
 
 import TabRoutes from './tab.routes'
 import StackRoutes from './stack.routes'
-import { Prioridade, Config, EsperaOs, Historico, Cliente, Profile, OSIndividual } from '../screens/Inside'
+import { Prioridade, Config, EsperaOs, Historico, Clientes, Profile, OSIndividual, ClientesList } from '../screens/Inside'
 
 const Drawer = createDrawerNavigator()
 
@@ -122,7 +122,7 @@ export default function DrawerRoutes(){
             />
              <Drawer.Screen
                 name='clientes'
-                component={Cliente}
+                component={ClientesList}
                 options={{
                     drawerIcon:  ({ color, size }) => <AntDesign name="team" size={size} color={color} />,
                     drawerLabel: 'Clientes'

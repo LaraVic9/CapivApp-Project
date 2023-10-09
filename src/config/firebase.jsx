@@ -29,5 +29,3 @@ initializeAuth(app, {
 export const auth = getAuth()
 
 export default{ app, getApp, getAuth };
-
-
