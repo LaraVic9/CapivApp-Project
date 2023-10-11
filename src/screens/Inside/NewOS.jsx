@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import FabButton from '../../components/FabButton';
 
-export default function New() {
+export default function NewOS() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>New</Text>
+      <Text style={styles.title}>NewOS</Text>
       <FabButton style={{ bottom: 150, right: 50,}}/>
     </View>
   );

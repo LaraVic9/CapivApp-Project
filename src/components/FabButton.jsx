@@ -12,6 +12,7 @@ export default class FabButton extends Component {
        Animated.spring(this.animation, {
         toValue,
         friction: 6,
+        useNativeDriver: true,
        }).start()
 
        this.open = !this.open;
@@ -82,7 +83,8 @@ render(){
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        position: 'absolute'
+        position: 'absolute',
+       
     },
     button: {
         position: 'absolute',
