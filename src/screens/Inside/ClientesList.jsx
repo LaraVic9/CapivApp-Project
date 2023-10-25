@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function ClientesList() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cliente</Text>
+      <Text style={styles.title}>Cliente lista</Text>
       
     </View>
   );

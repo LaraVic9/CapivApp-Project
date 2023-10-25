@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
               Ordens de Serviço Novas
             </Text>
             <View style={styles.NovasContainer}>
-              <OsItemV style={styles.novaOS} data="06/10/2023" title="001-2023" prioridade="alta" onPress={() => navigation.navigate("os")}/>
+              <OsItemV style={styles.novaOS} data="06/10/2023" title="001-2023" prioridade="alta" onPress={() => navigation.navigate("OSIndividual")}/>
               <OsItemV style={styles.novaOS} data="07/10/2023" title="002-2023" prioridade="alta" onPress={() => navigation.navigate("os")}/>
             </View>
             <View style={styles.NovasContainer}>

@@ -8,7 +8,6 @@ import React, {useState} from 'react';
 import { Login, Welcome, SignUp, AlterarSenha, NovaSenha } from './src/screens/outside';
 import { Prioridade } from './src/screens/Inside';
 
-import { auth } from './src/config/firebase';
 import useAuth from './src/hooks/useAuth';
 
 const Stack = createNativeStackNavigator()

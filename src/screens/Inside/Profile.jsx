@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function Profile({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Meu perfil bla</Text>
-      <Button title="Home" onPress= {() => navigation.natigate('home')}/>
+      <Text style={styles.title}>Meu perfil</Text>
+      <Button title="Cliente" onPress= {() => navigation.navigate('cliente')}/>
     </View>
   );
 }
