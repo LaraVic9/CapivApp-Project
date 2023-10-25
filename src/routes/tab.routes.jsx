@@ -111,7 +111,7 @@ const rotation = {
                     tabBarIcon: ({ focused }) => {
                         return (
                           <View
-                          style= {{  marginLeft: Platform.OS == "ios" ? -10 : 30, }}
+                          style= {{  marginLeft: Platform.OS == "ios" ? -10 : 40, zIndex: 1,}}
                         >
                             <AntDesign
                             name="team"
@@ -134,11 +134,11 @@ const rotation = {
                               alignItems: "center",
                               justifyContent: "center",
                               backgroundColor: COLORS.blue,
-                              height: Platform.OS == "ios" ? 50 : 60,
-                              width: Platform.OS == "ios" ? 50 : 60,
+                              height: Platform.OS == "ios" ? 10 : 10,
+                              width: Platform.OS == "ios" ? 10 : 10,
                               top: Platform.OS == "ios" ? -10 : -20,
                               borderRadius: Platform.OS == "ios" ? 25 : 30,
-                              marginLeft: Platform.OS == "ios" ? 20 : 70,
+                              marginLeft: Platform.OS == "ios" ? 20 : 20,
                               
                             }}
                           ></View>
